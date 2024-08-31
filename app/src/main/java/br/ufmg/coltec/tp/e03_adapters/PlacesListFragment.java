@@ -32,5 +32,10 @@ public class PlacesListFragment extends ListFragment {
         Place lugarSelecionado = this.lugares[position];
 
         // TODO[4]: Recuperar PlaceFragment e atualizar o lugar
+        PlaceFragment placeFragment = (PlaceFragment) getActivity().getSupportFragmentManager().findFragmentById(R.id.frag_place_details);
+
+        if (placeFragment != null) {
+            placeFragment.atualizaLugar(lugarSelecionado);
+        }
     }
 }
